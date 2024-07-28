@@ -1,3 +1,5 @@
+EMACS = emacs
+
 FILES := init.el $(wildcard conf.d/*.el)
 
 ELC_FILES := $(FILES:%.el=%.elc)
@@ -16,7 +18,7 @@ all: byte-code
 byte-code: $(ELC_FILES)
 
 $(ELC_FILES): %.elc: %.el
-	@task.d/compile.el $<
+	@$(EMACS) -x task.d/compile.el $<
 
 native: $(ELN_FILES)
 
@@ -24,10 +26,10 @@ $(ELN_FILES): %.eln: %.el native-is-available
 	$(CLIENT) $(FLAGS) --eval '(native-compile "$<")'
 
 native-is-available:
-	@task.d/native-is-available.el
+	@$(EMACS) -x task.d/native-is-available.el
 
 install: $(PACKAGES)
-	task.d/melpa-install.el $^
+	$(EMACS) -x task.d/melpa-install.el $^
 
 clean:
 	rm -f $(ELC_FILES)
