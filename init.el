@@ -16,6 +16,8 @@
 (load-module "conf.d/terminal")
 
 (setq inhibit-startup-screen nil)
+(setq backup-directory-alist
+      (list (cons "." (concat user-emacs-directory "backups"))))
 
 (setq-default show-trailing-whitespace t)
 (global-whitespace-mode 1)

@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(tango-dark))
+ '(backup-by-copying t)
  '(display-line-numbers 'relative)
  '(editorconfig-mode t)
  '(eldoc-echo-area-prefer-doc-buffer 'maybe)
@@ -17,10 +18,12 @@
  '(evil-want-Y-yank-to-eol t)
  '(explicit-shell-file-name (executable-find "bash"))
  '(frame-resize-pixelwise t)
+ '(make-backup-files t)
  '(maximum-scroll-margin 0.33)
  '(scroll-down-aggressively 0.0)
  '(scroll-margin 100)
  '(scroll-up-aggressively 0.0)
+ '(vc-make-backup-files nil)
  '(whitespace-style '(face trailing tabs lines-tail tab-mark))
  '(window-resize-pixelwise t))
 (custom-set-faces
