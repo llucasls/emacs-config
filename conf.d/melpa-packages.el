@@ -15,6 +15,7 @@
          ("\\.djhtml\\'" . web-mode)
          ("\\.html\\'" . web-mode)
          ("\\.css\\'" . web-mode)
+         ("\\.jinja\\'" . web-mode)
          ("\\.js\\'" . web-mode)))
 
 (use-package evil)
@@ -24,5 +25,7 @@
 (use-package editorconfig)
 
 (use-package rust-mode)
+
+(use-package lsp-mode)
 
 ;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
